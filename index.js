@@ -42,17 +42,27 @@ Airplane.prototype.land = function () {
 function Person(name, age) {
   this.name=name;
   this.age=age;
-  this.emptyStomach=new Array();
+  this.stomach=[];
 }
-Person.prototype.eat=function(){
-  if (emptyStomach<10){
-    this.emptyStomach+=1;
-    console.log("Yum");
-  } else if (emptyStomach=10){
-    this.emptyStomach=this.emptyStomach;
-    console.log("I've got a full stomach. I can't eat any more")
+Person.prototype.eat=function(edible){
+  if (this.stomach.length<=10){
+    this.stomach.push(edible);
   }
 }
+Person.prototype.poop=function(edible){
+  this.stomach=[];
+}
+Person.prototype.toString=function(){
+  console.log(`${name},${age}`)
+}
+
+let personOne=new Person("Ahmed", 29);
+
+personOne.eat("pineapple");
+personOne.eat("broccoli");
+
+console.log(personOne.stomach);
+
 /*
   TASK 2
     - Write a Car constructor that initializes `model` and `milesPerGallon` from arguments.
