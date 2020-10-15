@@ -118,10 +118,10 @@ Baby.prototype=Object.create(Person.prototype);
   TASK 4
 
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1. when in global scope, value of this will be window/console object 
+  2. with implicit binding, this refers to the object to the left of the dot 
+  3. with call or apply methods, this explicitly defined 
+  4. in new binding, this refers to the newly created object
 */
 
 
